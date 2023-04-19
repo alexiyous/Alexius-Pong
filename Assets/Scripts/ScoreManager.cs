@@ -30,7 +30,7 @@ public class ScoreManager : MonoBehaviour
     {
         rightScore += increment;
         ball.ResetBall();
-        ball.rig.velocity = -ball.speed;
+        ball.MoveLeftOnReset();
         if (rightScore >= maxScore)
         {
             GameOver();
@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour
     {
         leftScore += increment;
         ball.ResetBall();
-        ball.rig.velocity = ball.speed;
+        ball.MoveRightOnReset();
         if (leftScore >= maxScore)
         {
             GameOver();
@@ -60,4 +60,5 @@ public class ScoreManager : MonoBehaviour
             kiri.SetActive(true);
         }
     }
+
 }
