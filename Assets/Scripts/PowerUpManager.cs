@@ -40,9 +40,12 @@ public class PowerUpManager : MonoBehaviour
             timeDeleteCounter -= Time.deltaTime;
             if (timeDeleteCounter <= 0f)
             {
-                RemovePowerUp(powerUpList[0]);
-                timeDeleteCounter = timeDeleteLength;
-                isDestroyed = true;
+                if (powerUpList.Count > 0)
+                {
+                    RemovePowerUp(powerUpList[0]);
+                    timeDeleteCounter = timeDeleteLength;
+                    isDestroyed = true;
+                }
             }
         }
 
